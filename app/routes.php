@@ -2,8 +2,7 @@
 $app = new Slim();
 
 $app->get('/', function(){
-    $controller = new UserController();
-    $controller->showLoginPage();
+    echo "homepage";
   });
 
 $app->get('/login/', function(){

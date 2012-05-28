@@ -2,7 +2,8 @@
 
 class Controller{
   private static $global_context = array(
-					 "JS_HOME" => JS_HOME
+					 "JS_HOME" => JS_HOME,
+					 "CSS_HOME" => CSS_HOME
 				    );
   
   protected function render($name, $context){
