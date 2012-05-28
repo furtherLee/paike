@@ -8,6 +8,11 @@ $app->get('/', function(){
 
 $app->get('/login/', function(){
     $controller = new UserController();
+    $controller->showLoginPage();
+  });
+
+$app->get('/register/', function(){
+    $controller = new UserController();
     $controller->showRegisterPage();
   });
 
