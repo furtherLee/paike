@@ -1,0 +1,15 @@
+<?php
+
+date_default_timezone_set('Asia/Shanghai');
+
+define("DB_NAME", "paike");
+define("DB_USER", "paike_dev");
+define("DB_PASS", "paike_dev");
+define("DB_HOST", "localhost");
+
+define("HOST_URL", "http://localhost");
+define("SITE_TITLE", "排客");
+
+define("SESSION_PATH", "/tmp/sessions/");
+define("JS_HOME", "http://localhost/ppt/static/js/");
+
