@@ -1,0 +1,32 @@
+{% extends "/layout/frame.html" %}
+{% block body %}
+	<div class="well span6">
+   	 <form class="form-horizontal">
+      <fieldset>
+          <div class="control-group">
+            <label for="focusedInput" class="control-label">邮箱地址</label>
+            <div class="controls">
+              <input type="text" value="Email Addrress…" id="focusedInput" class="input-xlarge focused">
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="focusedInput" class="control-label">密码</label>
+            <div class="controls">
+              <input type="text" value="PassWord…" id="focusedInput" class="input-xlarge focused">
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="focusedInput" class="control-label">密码重复</label>
+            <div class="controls">
+              <input type="text" value="PassWord Again…" id="focusedInput" class="input-xlarge focused">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">注册</button>
+            <button class="btn">取消</button>
+          </div>
+        </fieldset>
+      </form>
+   	</div>
+
+{% endblock %}
