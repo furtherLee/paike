@@ -1,0 +1,9 @@
+#page-header{
+	background-image: -moz-linear-gradient(center top, #32c3cd 0%, #222222 100%);
+}
+#page-header .page-header-font-white{
+	color: rgba(255,255,255,0.97);
+}
+#page-header .page-header-search{
+	background-color: #f7f9fa;
+}

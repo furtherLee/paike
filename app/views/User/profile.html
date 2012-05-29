@@ -1,1 +1,18 @@
-<div> {{user.getName()}} </div>
+<div class="well span4" id="profile-type">
+	<div class="span4" id="profile-photo">
+		<a href="#" class="thumbnail">
+			<img src="{{IMG_HOME}}photo.png"/>
+		</a>
+	</div>
+	<div style="padding: 8px 0;" class="span4 well" id="profile-info">
+        <ul class="nav nav-list">
+          <li class="nav-header">个人信息</li>
+          <li>姓名  &nbsp &nbsp &nbsp  &nbsp &nbsp&nbsp &nbsp {{user.getName()}}</li>
+          <li>邮箱  &nbsp &nbsp &nbsp  &nbsp &nbsp&nbsp &nbsp	{{user.getEmail()}}</li>
+          <li>性别  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp{{user.getSex()}}</li>
+          <li>出生年月 &nbsp &nbsp &nbsp {{user.getBirthday()}}</li>
+          <li class="divider"></li>
+          <li><button href="#" class="btn" id="profile-create-btn">创建小组</button></li>
+        </ul>
+    </div>
+</div>

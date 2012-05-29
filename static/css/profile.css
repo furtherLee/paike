@@ -1,0 +1,25 @@
+#profile-type{
+	position: relative;
+	left: 10px;
+	top:  60px;	
+}
+#profile-photo{
+	position: relative;
+	left:-20px;
+	top: 0px;
+}
+#profile-info{
+	position: relative;
+	left: -20px;
+	top: 15px;
+	text-align:left;
+	line-height: 1.28;
+	color: #1D2A5B;
+    font-size: 14px; 
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}
+#profile-create-btn{
+	width: 150px;
+	position: relative;
+	left: 40px;
+}
