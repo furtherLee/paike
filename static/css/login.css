@@ -1,3 +1,22 @@
-{% block css %}
-<link rel="stylesheet" href="{{CSS_HOME}}login.css" />
-{% endblock %}
+#login_title{
+	color: #68d5e5;
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 3px;
+	text-align: center;
+	text-shadow: 0 1px 2px #000000;
+	position: relative;
+	left: 0px;
+	top: 10px;
+}
+#login_content{
+	color: #EEEEEE;
+	font-size: 20px;
+	font-weight: 300px;
+	line-height: 22px;
+	text-align: left;
+	text-shadow: 0 1px 2px #000000;
+	position: relative;
+	left: 0px;
+	top: 30px;
+}
