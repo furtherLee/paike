@@ -2,6 +2,7 @@
 
 class Controller{
   private static $global_context = array(
+					 "HOST_URL" => HOST_URL,
 					 "JS_HOME" => JS_HOME,
 					 "CSS_HOME" => CSS_HOME,
 					 "IMG_HOME" => IMG_HOME

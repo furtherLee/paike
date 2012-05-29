@@ -1,7 +1,33 @@
 $(function(){
     $form = $("#register-form");
-
-    $form.find('[name="birthday"]').datepicker();
-
-
+    $name = $form.find('[name="name"]');
+    $email=  $form.find('[name="email"]');
+    $pass = $form.find('[name="password"]');
+    $passAgain = $form.find('[name="passwordagain"]');
+    $sex = $form.find('[name="sex"]');
+    $birthday = $form.find('[name="birthday"]');
+    $submit = $('#submit');
+    $birthday.datepicker();
+    
+    var checkOK = function(){
+	return true;
+    }
+    
+    $submit.click(function(e){
+	if (checkOK()){
+	    $.ajax({
+		type: "POST",
+		data: $form.serialize(),
+		dateType: "json",
+		success: function(data, textStatus, jqXHR){
+		   
+		},
+		error: function(textStatus, jqXHR, errorThrown){
+                    console.log(textStatus);
+		}
+		
+	    });
+	}
+	return false;
+    });
 });

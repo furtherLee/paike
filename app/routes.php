@@ -36,12 +36,6 @@ $app->get('/account/logout/', function(){
     $controller->logout();
   });
 
-$app->post('/account/', function(){
-    $controller = new UserController();
-    $controller->newUser();
-    echo "new account";
-  });
-
 $app->post('/account/:id/edit/', function($id){
     $controller = new UserController();
     $controller->edit($id);

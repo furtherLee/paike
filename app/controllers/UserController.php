@@ -15,36 +15,6 @@ class UserController extends Controller{
     $this->render('User/register', array('title' => '成为一名排客'));
   }
 
-  public function newUser(){
-     
-    $iter = rand(2, 16);
-    
-    $salt = md5(uniqid(time(),true));
-    
-    $user = new User();
-    
-    $user->setEmail(fRequest::get('email'));
-    
-    $user->setIter($iter);
-    
-    $user->setSalt($salt);
-    
-    $user->setPassword(User::calcPassword(fRequest::get('password'), $salt, $iter));
-    
-    $user->setName(fRequest::get('name'));
-    
-    $user->setSex(fRequest::get('sex'));
-
-    $user->setBirthday(fRequest::get('birthday'));
-
-    $user->store();
-    
-    $this->ajaxReturn(array(
-                            'status' => 'OK',
-                            'user_id' => $user->getId()
-                            ));
-  }
-
   public function edit($id){
   }
 
@@ -82,6 +52,37 @@ class UserController extends Controller{
     }
   }
 
+  public function register(){
+    // TODO check whether the email is registed
+    $iter = rand(2, 16);
+    
+    $salt = md5(uniqid(time(),true));
+    
+    $user = new User();
+    
+    $user->setEmail(fRequest::get('email'));
+    
+    $user->setIter($iter);
+    
+    $user->setSalt($salt);
+    
+    $user->setPassword(User::calcPassword(fRequest::get('password'), $salt, $iter));
+    
+    $user->setName(fRequest::get('name'));
+    
+    $user->setSex(fRequest::get('sex'));
+
+    $user->setBirthday(fRequest::get('birthday'));
+
+    $user->store();
+    
+    $this->ajaxReturn(array(
+                            'status' => 'OK',
+                            'user_id' => $user->getId()
+                            ));
+    
+  }
+  
   public function logout(){
     $back = fRequest::get('back');
     
@@ -96,6 +97,4 @@ class UserController extends Controller{
     }
   }
 
-  public function register(){
-  }
 } 
