@@ -13,7 +13,7 @@
 	text-align: center;
 	font-size: xx-large;
 	color: white;
-	padding-top: 15px;
+	padding-top: 25px;
 	
 }
 #registbody{
@@ -24,8 +24,8 @@
 	left: 200px;
 	top: 0px;	
 }
-#regist-table{
+.table{
 	position: relative;
 	left: -50px;
-	top: 20px;
+	top: 20px;	
 }
