@@ -1,29 +1,30 @@
-<header id="page-header"  class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+<header class="navbar navbar-fixed-top">
+    <div class="navbar-inner" id="page-header">
+      <div class="container" >
+        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" >
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a href="#" class="brand">排客Paike</a>
+        <a href="{{HOST_URL}}" class="brand page-header-font-white">排客Paike</a>
         <div class="nav-collapse">
 
           <form action="" class="navbar-search pull-left">
-            <input type="text" placeholder="Search" class="search-query span2">
+            <input type="text" placeholder="Search" class="search-query span3 page-header-search">
+            <button href="#" class="btn btn-success">搜索小组</button>
           </form>          
           <ul class="nav pull-right">
             <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">账号管理<b class="caret"></b></a>
+              <a data-toggle="dropdown" class="dropdown-toggle page-header-font-white" href="#" >账号管理<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">个人主页</a></li>
+                <li><a href="{{HOST_URL}}">个人主页</a></li>
                 <li><a href="#">修改信息</a></li>
                 <li class="divider"></li>
-                <li><a href="#">登出</a></li>
+                <li><a href="{{HOST_URL}}/account/logout">登出</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
-    </div><!-- /navbar-inner -->
-  </header>
+    </div>
+</header>
