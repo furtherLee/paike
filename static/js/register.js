@@ -23,9 +23,8 @@ $(function(){
 		    window.location.href = config.home;
 		},
 		error: function(textStatus, jqXHR, errorThrown){
-                    console.log(textStatus);
-		}
-		
+   
+		}		
 	    });
 	}
 	return false;
