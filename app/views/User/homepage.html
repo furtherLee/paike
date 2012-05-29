@@ -3,10 +3,12 @@
 {% block css %}
 {{parent()}}
 <link rel="stylesheet" href="{{CSS_HOME}}profile.css" />
+<link rel="stylesheet" href="{{CSS_HOME}}groups.css" />
 {% endblock %}
 {% block body %}
 {{ parent() }}
 <div class="containner-fluid">
 	{% include "/User/profile.html" %}
+	{% include "/Group/index.html" %}
 </div>
 {% endblock %}

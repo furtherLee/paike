@@ -1,0 +1,22 @@
+#groupinxdex-type{
+	position: relative;
+	left: 20px;
+	top:  60px;
+}
+.groupitem-type{
+	background-color: #DFF0D8;
+    border: 1px solid #D6E9C6;
+    color: #468847;	
+    border-radius: 4px 4px 4px 4px;
+    bottom: -1px;
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    list-style: none outside none;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 43px;
+    text-align: center;
+}
