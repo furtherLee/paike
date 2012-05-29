@@ -1,5 +1,94 @@
 {% extends "/layout/frame.html" %}
 
+{% block css %}
+<link rel="stylesheet" href="{{CSS_HOME}}register.css" />
+{% endblock %}
+
+{% block body %}
+<div id="homepage-banner" >
+		<header id="paiketitle">排客方便生活</header>
+</div>
+<div id="registbody">
+<div class="container">
+<div class="row">
+	<div class="span6">
+	 <a class="thumbnail">
+	  <img height="300" width="500" src={{IMG_HOME}}/people.jpg"/>
+	 </a>
+	</div>
+	<div class="span6">
+   	 <form class="form-horizontal">
+      <fieldset>
+          <div class="control-group">
+            <label for="focusedInput" class="control-label">邮箱地址</label>
+            <div class="controls">
+              <input type="text" placeholder="Example@example.com" name="email" class="input-xlarge focused">
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="focusedInput" class="control-label">密码</label>
+            <div class="controls">
+              <input type="text" placeholder="*****" name="password"  class="input-xlarge focused">
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="focusedInput" class="control-label">密码重复</label>
+            <div class="controls">
+              <input type="text" placeholder="*****" name="passwordagain" class="input-xlarge focused">
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="select01" class="control-label">性别</label>
+            <div class="controls">
+              <select name="sex" >
+                <option>男</option>
+                <option>女</option>
+              </select>
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="select01" class="control-label">出生年月</label>
+            <div class="controls">
+              <select id="select01">
+                <option>80后</option>
+                <option>90后</option>
+              </select>
+            </div>
+            <div class="controls">
+              <select id="select01">
+                <option>一月</option>
+                <option>二月</option>
+                <option>三月</option>
+                <option>四月</option>
+                <option>五月</option>
+                <option>六月</option>
+                <option>七月</option>
+                <option>八月</option>
+                <option>九月</option>
+                <option>十月</option>
+                <option>十一月</option>
+                <option>十二月</option>
+              </select>
+            </div>
+            <div class="controls">
+              <select id="select01">
+                <option>1号</option>
+                <option>2号</option>
+              </select>
+            </div>
+          </div>         
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">注册</button>
+            <button class="btn">取消</button>
+          </div>
+        </fieldset>
+      </form>
+   	</div>
+</div>
+</div>
+</div>
+{% endblock %}
+
 {% block js %}
 <script type="text/javascript" src="{{JS_HOME}}register.js"></script>
 {% endblock %}

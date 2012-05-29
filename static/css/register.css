@@ -1,0 +1,22 @@
+#paikebody{
+	background-image: url('img/backgroundyello.jpg');
+}
+#homepage-banner{
+	background-image: url('img/backgroundgreen.jpeg');
+	background-repeat: repeat-y;
+	height: 70px;
+	width: 100%;
+	margin: 3px;
+    padding: 5px;
+}
+#paiketitle{
+	text-align: center;
+	font-size: xx-large;
+	color: white;
+	padding-top: 15px;
+	
+}
+#registbody{
+	padding: 10px;
+	background-image: url('img/backgroundyello.jpg');
+}
