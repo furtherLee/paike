@@ -11,5 +11,6 @@ define("HOST_URL", "http://localhost");
 define("SITE_TITLE", "排客");
 
 define("SESSION_PATH", "/tmp/sessions/");
-define("JS_HOME", "http://localhost/ppt/static/js/");
+define("JS_HOME", "http://localhost/paike/static/js/");
+define("CSS_HoME", "http://localhost/paike/static/css/");
 
