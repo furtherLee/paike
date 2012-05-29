@@ -1,12 +1,3 @@
---
--- 数据库: `cdrift`
---
-
--- --------------------------------------------------------
-
---
--- 表的结构 `users`
---
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -14,7 +5,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(200) NOT NULL,
   `sex` varchar(10) NOT NULL,
   `password` varchar(80) NOT NULL,
-  `birthday` timestamp NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `salt` varchar(80) NOT NULL,
   `iter` int(11) NOT NULL,
