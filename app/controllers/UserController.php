@@ -2,10 +2,11 @@
 class UserController extends Controller{
 
   public function showHomePage(){
-    //    fAuthorization::requireLoggedIn();
+    fAuthorization::requireLoggedIn();
     $userToken = fAuthorization::getUserToken();
+    $user = new User($userToken['id']);
     // TODO
-    $this->render("User/homepage", array());
+    $this->render("User/homepage", array("user" => $user));
    }
 
   public function showLoginPage(){
@@ -17,6 +18,17 @@ class UserController extends Controller{
   }
 
   public function edit($id){
+    fAuthorization::requireLoggedIn();
+    $userToken = fAuthorization::getUserToken();
+    $user = new User($userToken['id']);
+    $user->setName(fRequest::get('name'));    
+    $user->setSex(fRequest::get('sex'));
+    $user->setBirthday(fRequest::get('birthday'));
+    $user->store();
+    $this->ajaxReturn(array(
+			    "status" => "ok"
+			    ));
+    
   }
 
   public function login(){
@@ -36,7 +48,7 @@ class UserController extends Controller{
         return;
       }
       
-      if($user->passCheckOK(fRequest::get('pass'))){
+      if($user->passCheckOK(fRequest::get('password'))){
         fAuthorization::setUserToken(array(
 					   'id' => $user->getId(),
 					   'name' => $user->getName(),
