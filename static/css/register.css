@@ -19,3 +19,13 @@
 #registbody{
 	padding: 10px;
 }
+#registbtnpos{
+	position: relative;
+	left: 200px;
+	top: 0px;	
+}
+#regist-table{
+	position: relative;
+	left: -50px;
+	top: 20px;
+}
