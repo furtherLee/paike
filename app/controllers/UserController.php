@@ -6,7 +6,10 @@ class UserController extends Controller{
     $userToken = fAuthorization::getUserToken();
     $user = new User($userToken['id']);
     // TODO
-    $this->render("User/homepage", array("user" => $user));
+    $this->render("User/homepage", array(
+					 "title" => $user->getName()."的主页",
+					 "user" => $user
+					 ));
    }
 
   public function showLoginPage(){
