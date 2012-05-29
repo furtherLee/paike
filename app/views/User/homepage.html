@@ -1,5 +1,9 @@
 {% extends "/layout/normal-page.html" %}
 
+{% block css %}
+{{parent()}}
+<link rel="stylesheet" href="{{CSS_HOME}}profile.css" />
+{% endblock %}
 {% block body %}
 {{ parent() }}
 <div class="containner-fluid">
