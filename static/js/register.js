@@ -20,7 +20,7 @@ $(function(){
 		data: $form.serialize(),
 		dateType: "json",
 		success: function(data, textStatus, jqXHR){
-		   
+		    window.location.href = config.home;
 		},
 		error: function(textStatus, jqXHR, errorThrown){
                     console.log(textStatus);

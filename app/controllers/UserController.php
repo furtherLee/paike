@@ -2,9 +2,10 @@
 class UserController extends Controller{
 
   public function showHomePage(){
-    fAuthorization::requireLoggedIn();
+    //    fAuthorization::requireLoggedIn();
     $userToken = fAuthorization::getUserToken();
     // TODO
+    $this->render("User/homepage", array());
    }
 
   public function showLoginPage(){
