@@ -13,6 +13,13 @@ class GroupController extends Controller{
   public function newGroup(){
   }
 
+  public function showNewGroup(){
+    fAthorization::requireLoggedIn();
+    $this->render("Group/create", array(
+			    "title" => "新建小组"
+			    ));
+  }
+
   public function edit($id){
   }
 

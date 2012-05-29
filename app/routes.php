@@ -45,7 +45,11 @@ $app->post('/account/:id/edit/', function($id){
 $app->get('/group/:id/', function($id){
     $controller = new GroupController();
     $controller->show($id);
-    echo "show group $id";
+  });
+
+$app->get('/group/', function(){
+    $controller = new GroupController();
+    $controller->showNewGroup();
   });
 
 $app->post('/group/', function(){
