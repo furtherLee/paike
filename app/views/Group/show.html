@@ -2,6 +2,10 @@
 
 {% block body %}
 {{ parent() }}
+<div id="group-info">
+  <input id="now-gid" type="hidden" value="{{group.getId()}}"/>
+</div>
+
 <div id="main-container" class="container">
   <div class="row">
     {% include "/Group/operate_panel.html" %}
@@ -12,4 +16,6 @@
 
 {% block js %}
    <script type="text/javascript" src="{{JS_HOME}}bootstrap-tab.js"></script>
+   <script type="text/javascript" src="{{JS_HOME}}widgets.js"></script>
+   <script type="text/javascript" src="{{JS_HOME}}work.js"></script>
 {% endblock %}

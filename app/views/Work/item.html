@@ -1,0 +1,13 @@
+<tr data="{{w.getId()}}">
+  <th>{{w.getName()}}</th>
+  <th>{{w.getDesp()}}</th>
+  <th>
+    <input type="hidden" name="work{{w.getId()}}" value="0"/>
+    <input type="checkbox" name="work{{w.getId()}}" value="1" {{w.checkMe(user.getId())}}/>
+  </th>
+  <th>
+    {% if isLeader %}
+    <a href="{{HOST_URL}}/work/{{w.getId()}}/delete/">删除</a>
+    {% endif %}
+  </th>
+</tr>

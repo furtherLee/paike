@@ -15,12 +15,14 @@ require_once(__DIR__.'/models/User.php');
 require_once(__DIR__.'/models/Group.php');
 require_once(__DIR__.'/models/Member.php');
 require_once(__DIR__.'/models/Work.php');
+require_once(__DIR__.'/models/Worker.php');
 /**
  * Load Controllers
  */
 require_once(__DIR__.'/controllers/Controller.php');
 require_once(__DIR__.'/controllers/UserController.php');
 require_once(__DIR__.'/controllers/GroupController.php');
+require_once(__DIR__.'/controllers/WorkController.php');
 
 /**
  * Set Up Routes

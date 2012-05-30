@@ -1,0 +1,17 @@
+<section class="work-list">
+<form id="work-list-form" class="form-horizontal">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+	<th> 班次名称 </th>
+	<th> 班次描述 </th>
+	<th> 我可以做 </th>
+	<th> 班次操作 </th>
+      </tr>
+    </thead>
+    {% for w in works %}
+    {% include "/Work/item.html" %}
+    {% endfor %}
+  </table>
+</form>
+</section>

@@ -82,13 +82,16 @@ $app->get('/group/:id/schedule/', function($id){
     echo "generate a schedule";
   });
 
-$app->post('/schedule/:uid/:jid/', function($uid, $jid){
-    $controller = new JobController();
-    $controller->addRel($uid, $jid);
+$app->post('/schedule/:uid/:wid/', function($uid, $jid){
+    $controller = new WorkController();
+    $controller->addRel($uid, $wid);
     echo "edit a schedule for $uid on the job $sid";
   });
 
-
+$app->post('/work/', function(){
+    $controller = new WorkController();
+    $controller->create();
+  });
 
 $app->get('/schedule/:id/', function($id){
     $controller = new ScheduleController();
