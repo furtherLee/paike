@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `members` (
 
 CREATE TABLE IF NOT EXISTS `works` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `num` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
   `desp` text NOT NULL,
   `gid` int(11) NOT NULL,

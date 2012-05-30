@@ -18,7 +18,6 @@ $(function(){
 	$box.find("#submit").click(function(e) {
 	    var d = $box.find("#add-work-form").serialize();
             d = d+"&gid="+$("#now-gid").val();
-	    console.log(d);
 	    $.ajax({
                 type: 'POST',
                 url: config.home+"work/",
@@ -36,6 +35,49 @@ $(function(){
             $box.modal("hide");
 	    return false;
         });
+	return false;
+    });
+
+    /**
+     * Save my work candidates
+     */
+    $saveTimeBtn = $("#save-time");
+    $saveTimeBtn.click(function(e){
+	var d = $("#work-list-form").serialize();
+	$.ajax({
+            type: 'POST',
+            url: config.home+"workers_assign/"+$("#now-gid").val(),
+            data: d,
+            dataType: 'json',
+            success: function(data, textStatus, jqXHR){
+		console.log(data);
+            },
+            error: function(data, textStatus, jqXHR){
+            },
+            complete: function(data, textStatus, jqXHR){
+            }
+        });
+
+	return false;
+    });
+
+    /**
+     * for Schedule
+     */
+    $('.work-ban, .member-ban').sortable({
+	connectWith:".work-ban, .member-ban",
+	placeholder:"label"
+    }).disableSelection();
+    
+    console.log($('.work-ban, .member-ban'));
+ //   $('li.user-squre-item').draggable();
+
+    /**
+     * for save a schedule
+     */
+    $saveScheduleBtn = $("#save-schedule");
+    $saveScheduleBtn.click(function(e){
+	
 	return false;
     });
 

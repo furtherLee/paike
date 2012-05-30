@@ -1,6 +1,7 @@
 <tr data="{{w.getId()}}">
   <th>{{w.getName()}}</th>
   <th>{{w.getDesp()}}</th>
+  <th>{{w.getNum()}}</th>
   <th>
     <input type="hidden" name="work{{w.getId()}}" value="0"/>
     <input type="checkbox" name="work{{w.getId()}}" value="1" {{w.checkMe(user.getId())}}/>

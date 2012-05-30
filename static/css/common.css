@@ -35,3 +35,26 @@
     position: relative;
     margin-top: 10px;
 }
+
+.work-ban li{
+    margin: 5px;
+    padding: 5px;
+    width: 50px;
+}
+
+.member-ban li{
+    margin: 5px;
+    padding: 5px;
+    width: 50px;
+}
+
+.work-ban{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin-right: 10px;
+    background: #EEE;
+    padding: 5px;
+    height: 50px;
+}

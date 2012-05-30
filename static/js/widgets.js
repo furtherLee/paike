@@ -8,6 +8,8 @@ work_form:'\
     <div class="modal-body clear">\
       <label for="name" class="label"> 工作名称 </label>\
       <input type="text" class="span6" name="name" placeholder="周一丙班经理"/>\
+      <label for="num" class="label"> 工作人数 </label>\
+      <input type="text" class="span6" name="num" placeholder="1"/>\
       <label for="desp" class="label"> 工作描述 </label>\
       <textarea name="desp" class="span6" placeholder="经理班"/>\
     </div>\

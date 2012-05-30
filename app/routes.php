@@ -93,6 +93,11 @@ $app->post('/work/', function(){
     $controller->create();
   });
 
+$app->post('/workers_assign/:gid', function($gid){
+    $controller = new WorkController();
+    $controller->assignMyself($gid);
+  });
+
 $app->get('/schedule/:id/', function($id){
     $controller = new ScheduleController();
     $controller->showSchedule($id);
