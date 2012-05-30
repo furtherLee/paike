@@ -64,16 +64,14 @@ $app->post('/group/:id/edit/', function($id){
     echo "edit a group profile";
   });
 
-$app->post('/group/:id/del/', function($id){
+$app->post('/group/:id/delete/', function($id){
     $controller = new GroupController();
     $controller->delete($id);
-    echo "delete a group";
   });
 
 $app->post('/group/:id/join/', function($id){
     $controller = new GroupController();
     $controller->join($id);
-    echo "join a group";
   });
 
 $app->get('/group/:id/schedule/', function($id){

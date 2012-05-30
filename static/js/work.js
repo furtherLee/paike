@@ -69,9 +69,6 @@ $(function(){
 	placeholder:"label"
     }).disableSelection();
     
-    console.log($('.work-ban, .member-ban'));
- //   $('li.user-squre-item').draggable();
-
     /**
      * for save a schedule
      */

@@ -36,16 +36,16 @@
     margin-top: 10px;
 }
 
-.work-ban li{
+.work-ban a{
     margin: 5px;
     padding: 5px;
-    width: 50px;
+    width: 100px;
 }
 
-.member-ban li{
+.member-ban a{
     margin: 5px;
     padding: 5px;
-    width: 50px;
+    width: 100px;
 }
 
 .work-ban{

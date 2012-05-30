@@ -62,6 +62,16 @@ class GroupController extends Controller{
   }
 
   public function join($id){
+    $user = $this->getUser();
+    try{
+      $member = new Member(array('uid' => $user->getId(), 'gid' => $id));
+    }
+    catch(fNotFoundException $e){
+      $member = new Member();
+    }
+    $member->setUid($user->getId());
+    $member->setGid($id);
+    $member->store();
   }
   
   public function genSchedule($id){
