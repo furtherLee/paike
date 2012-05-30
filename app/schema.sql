@@ -22,7 +22,17 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `photo` varchar(200), 
   KEY `leader` (`leader`),
   PRIMARY KEY (`id`),
-  FOREIGN KEY(`leader`) REFERENCES `users` (`id`)
+  FOREIGN KEY (`leader`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `members` (
+  `gid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  PRIMARY KEY (`gid`, `uid`),
+  KEY `gid` (`gid`),
+  KEY `uid` (`uid`),
+  FOREIGN KEY (`gid`) REFERENCES `groups` (`id`),
+  FOREIGN KEY (`uid`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `works` (

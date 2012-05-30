@@ -1,9 +1,21 @@
-<section>
-<span class="container groupitem-type">
-	<div class="container span3">
-		<a href="#" class="thumbnail">
-			<img src="{{IMG_HOME}}group.jpg"/>
-		</a>
-	</div>
-</span>
+<section class="span6 group-item">
+  <div class="row">
+    <div class="span2">
+      <a class="thumbnail">
+	<img src="{{IMG_HOME}}group.jpg"/>
+      </a>
+    </div>
+    <div class="span4">
+      <header>
+	<a class="label label-warning" href="{{HOST_URL}}/group/{{group.getId()}}/">{{group.getName()}}</a>
+      </header>
+      <passage>
+	{{group.getDesp()|e}}
+      </passage>
+      <div class="group-buttons">
+	<a href="{{HOST_URL}}/group/{{group.getId()}}/join/">加入小组</a>
+	<a href="{{HOST_URL}}/group/{{group.getId()}}/">浏览小组</a>
+      </div>
+    </div>
+  </div>
 </section>

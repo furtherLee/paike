@@ -19,4 +19,11 @@ class Controller{
     echo json_encode($ary);
   }
 
+  protected function getUser(){
+    fAuthorization::requireLoggedin();
+    $userToken = fAuthorization::getUserToken();
+    $user = new User($userToken['id']);
+    return $user;
+  }
+
 }

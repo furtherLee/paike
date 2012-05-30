@@ -1,0 +1,36 @@
+<div class="well span7">
+  <header>
+    <h2>{{title}}</h2>
+    <hr/>
+  </header>
+  <form id="group-form" class="form-horizontal">
+    <fieldset>
+      <div class="control-group">
+        <label for="name" class="control-label">小组名称</label>
+        <div class="controls">
+	  <input type="text" placeholder="上海交大综合体育馆" name="name" class="input-xlarge focused"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="leader" class="control-label">组长</label>
+        <div class="controls">
+	  <input type="text" name="leader" class="input-xlarge disabled" disabled="" value="{{user.getName()}}"/>
+	  <input type="hidden" name="leader-id" value="{{user.getId()}}"/>
+       </div>
+      </div>
+      <div class="control-group">
+        <label for="desp" class="control-label">小组描述</label>
+        <div class="controls">
+	  <textarea rows="10" placeholder="..." name="desp" class="input-xlarge focused"></textarea>
+        </div>
+      </div>
+      
+      <div class="control-group">
+	<div class="controls">
+          <a class="btn btn-primary input-small pull-left" id="submit" id="submit" style="margin-right: 30px;">提交</a>
+          <a class="btn input-small" href="{{HOST_URL}}" style="margin-left:30px;">取消</a>
+	</div>
+      </div>
+    </fieldset>
+  </form>
+</div>

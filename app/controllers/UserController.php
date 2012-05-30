@@ -3,12 +3,12 @@ class UserController extends Controller{
 
   public function showHomePage(){
     fAuthorization::requireLoggedIn();
-    $userToken = fAuthorization::getUserToken();
-    $user = new User($userToken['id']);
+    $user = $this->getUser();
     // TODO
     $this->render("User/homepage", array(
 					 "title" => $user->getName()."的主页",
-					 "user" => $user
+					 "user" => $user,
+					 "groups" => $user->getMyGroups()
 					 ));
    }
 

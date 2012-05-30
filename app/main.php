@@ -12,7 +12,8 @@ include_once(__DIR__.'/init.php');
  * Load Models
  */
 require_once(__DIR__.'/models/User.php');
-
+require_once(__DIR__.'/models/Group.php');
+require_once(__DIR__.'/models/Member.php');
 /**
  * Load Controllers
  */

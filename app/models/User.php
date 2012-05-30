@@ -3,7 +3,7 @@
 class User extends fActiveRecord{
 
   protected function configure(){
-  
+    fORMRelated::overrideRelatedRecordName($this, 'Group', 'Member', 'members');
   }
 
   public function passCheckOK($pass){
@@ -17,6 +17,14 @@ class User extends fActiveRecord{
       $pass = md5($pass);
     }
     return $pass;
+  }
+  
+  public function getMyGroups(){
+    $id = $this->getId();
+    $groups = fRecordSet::build("Group",
+				array("users{members}.id=" => $id)
+				);    
+    return $groups;
   }
 
 }
