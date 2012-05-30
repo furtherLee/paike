@@ -1,0 +1,17 @@
+{% extends "/layout/normal-page.html" %}
+
+{% block css %}
+{{parent()}}
+{% endblock %}
+{% block body %}
+{{ parent() }}
+<div id="main-container" class="container">
+  <div class="row">
+	{% include "/User/profile.html" %}
+	<header>
+	  <h2 style="text-align:center;"> 搜索结果 </h2>
+	</header>
+	{% include "/Group/index.html" %}
+  </div>
+</div>
+{% endblock %}

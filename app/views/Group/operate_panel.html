@@ -1,0 +1,33 @@
+<div class="span8">
+  <ul class="nav nav-tabs">
+    <li><a href="#info" data-toggle="tab">小组信息</a></li>
+    <li><a href="#works" data-toggle="tab">工作</a></li>
+    <li><a href="#schedules" data-toggle="tab">工作安排</a></li>
+    {% if isMember %}
+    <li><a href="#my-works" data-toggle="tab">我的工作时间</a></li>
+    {% endif %}
+    {% if isLeader %}
+    <li><a href="#gen-schedule" data-toggle="tab">排一把</a></li>
+    {% endif %} 
+  </ul>
+  <div id="tab-content" class="tab-content">
+    <div id="info" class="tab-pane">
+      {% include "/Group/info.html" %}
+    </div>
+    <div id="works" class="tab-pane">
+      {% include "/Work/index.html" %}
+    </div>
+    <div id="schedules" class="tab-pane">
+      {% include "/Schedule/index.html" %}
+    </div>
+    {% if isMember %}
+    <div id="my-works" class="tab-pane">
+      {% include "/Work/check_list.html" %}
+    </div>
+    {% endif %}
+    {% if isLeader %}
+    <div id="gen-schedule" class="tab-pane">
+    </div>
+    {% endif %}
+  </div>
+</div>

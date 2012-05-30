@@ -3,11 +3,16 @@
 class GroupController extends Controller{
   public function show($id){
     $group = new Group($id);
-    
-    $this->render("/Group/show.html", array(
-					    'user' => $this->getUser(),
+    $group->loadMembers();
+    $user = $this->getUser();
+    $this->render("/Group/show", array(
+					    'user' => $user,
 					    'title' => "小组: ".$group->getName(),
-					    'group' => $group
+					    'group' => $group,
+					    'isLeader' => $user->getId() == $group->getLeader(),
+					    'isMember' => $group->isMember($user->getId()),
+					    'members' => $group->genMetaMembers(),
+					    'works' => $group->genWorks()
 					    ));
   }
 
@@ -15,6 +20,17 @@ class GroupController extends Controller{
   }
 
   public function search(){
+    $user = $this->getUser();
+    $key = fRequest::get("search-key");
+    $groups = fRecordSet::build(
+				'Group',
+				array("name~" => $key)
+				);
+    $this->render("/Group/search", array(
+					 'title' => "搜索结果",
+					 'user' => $user,
+					 'groups' => $groups
+					 ));
   }
 
   public function newGroup(){

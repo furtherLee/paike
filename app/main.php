@@ -14,6 +14,7 @@ include_once(__DIR__.'/init.php');
 require_once(__DIR__.'/models/User.php');
 require_once(__DIR__.'/models/Group.php');
 require_once(__DIR__.'/models/Member.php');
+require_once(__DIR__.'/models/Work.php');
 /**
  * Load Controllers
  */

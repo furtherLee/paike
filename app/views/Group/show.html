@@ -1,0 +1,15 @@
+{% extends "/layout/normal-page.html" %}
+
+{% block body %}
+{{ parent() }}
+<div id="main-container" class="container">
+  <div class="row">
+    {% include "/Group/operate_panel.html" %}
+    {% include "/Group/profile.html" %}
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+   <script type="text/javascript" src="{{JS_HOME}}bootstrap-tab.js"></script>
+{% endblock %}

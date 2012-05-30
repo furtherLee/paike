@@ -93,7 +93,11 @@ $app->post('/schedule/:uid/:jid/', function($uid, $jid){
 $app->get('/schedule/:id/', function($id){
     $controller = new ScheduleController();
     $controller->showSchedule($id);
-    echo "show a schedule with id $id";
+  });
+
+$app->get('/search/', function(){
+    $controller = new GroupController();
+    $controller->search();
   });
 
 $app->run();
