@@ -79,24 +79,12 @@ $app->get('/group/:id/metainfo/', function($id){
     $controller->retriveMetaInfo($id);
   });
 
-$app->get('/group/:id/schedule/', function($id){
-    $controller = new GroupController();
-    $controller->genSchedule($id);
-    echo "generate a schedule";
-  });
-
-$app->post('/schedule/:uid/:wid/', function($uid, $jid){
-    $controller = new WorkController();
-    $controller->addRel($uid, $wid);
-    echo "edit a schedule for $uid on the job $sid";
-  });
-
 $app->post('/work/', function(){
     $controller = new WorkController();
     $controller->create();
   });
 
-$app->post('/workers_assign/:gid', function($gid){
+$app->post('/workers_assign/:gid/', function($gid){
     $controller = new WorkController();
     $controller->assignMyself($gid);
   });
@@ -105,6 +93,11 @@ $app->get('/schedule/:id/', function($id){
     $controller = new ScheduleController();
     $controller->showSchedule($id);
   });
+
+$app->post('/group/:id/schedule/', function($id){
+    $controller = new GroupController();
+    $controller->genSchedule($id);
+  }); 
 
 $app->get('/search/', function(){
     $controller = new GroupController();
