@@ -2,7 +2,7 @@
 <div class="well span3 container">
 	<div class="container">
 		<div class="group_pl_pos">
-			<ul class="group_list_title">List header</ul>
+			<ul class="group_list_title">组长</ul>
 		</div>
 		<ul >
 		<div class="group_pl_plane">
@@ -10,8 +10,8 @@
 				<img  src="{{IMG_HOME}}photo.png" class="little_pic"/>
 			</div>
 			<div class="span2 container group_pl_user">
-				<p class="group_pl_name">姓名: helloworld</p>
-				<p class="group_pl_name">邮箱: hell@163.com</p>
+				<p class="group_pl_name">姓名: {{leader.getName()}}</p>
+				<p class="group_pl_name">邮箱: {{leader.getEmail()}}</p>
 			</div>
 		</div>
 		</ul>
@@ -22,15 +22,16 @@
 			<ul class="group_list_title">小组成员</ul>
 		</div>
 		<ul>
-		<div class="group_pl_plane">
-			<div class="span1 container">
-				<img  src="{{IMG_HOME}}photo.png" class="little_pic"/>
-			</div>
-			<div class="span2 container group_pl_user">
-				<p class="group_pl_name">姓名: helloworld</p>
-				<p class="group_pl_name">邮箱: hell@163.com</p>
-			</div>
-		</div>
+		  {% for mem in members%}
+		  <div class="group_pl_plane">
+		    <div class="span1 container">
+		      <img  src="{{IMG_HOME}}photo.png" class="little_pic"/>
+		    </div>
+		    <div class="span2 container group_pl_user">
+		      <p class="group_pl_name">姓名: {{mem['name']}}</p>
+		    </div>
+		  </div>
+		  {% endfor %}
 		</ul>
 	</div>
 </div>
