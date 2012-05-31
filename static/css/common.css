@@ -50,7 +50,7 @@
     margin-right: 10px;
     background: #EEE;
     padding: 5px;
-    height: 50px;
+    height: 30px;
     width:100%;
 }
 
@@ -68,11 +68,15 @@
 }
 
 .member-holder{
-    margin:5px;
-    padding: 5px;
-    width:100px;
+    padding-top: 5px;
+    padding-buttom:5px;
+    padding-left:50px;
+    padding-right:50px;
+    width: 2em;
     height: 1.5em;
     line-height:1.2em;
+    background-color: #E9967A;
+
 }
 .group_info_background{
 	background-image: url('img/zhuanqiangyellow.jpg');
