@@ -39,6 +39,11 @@ $(function(){
     });
 
     /**
+     * show first tab
+     */
+    $("#operate-tabs a:first").tab("show");
+
+    /**
      * Save my work candidates
      */
     $saveTimeBtn = $("#save-time");
