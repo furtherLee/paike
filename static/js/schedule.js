@@ -68,9 +68,10 @@ $(function(){
     $('.work-ban').bind("sortreceive", function(event, ui){
 	var uid=ui.item.attr('data');
 	var wid=$(this).attr('data');
-
+	
 	if(!map[uid][wid] || getNumOfWork(wid) >= $('#work-target-'+wid).attr('num')){
-	    result[$(ui.sender).attr('data')][uid] = true;
+	    if($(ui.sender).hasClass('work-ban'))
+		result[$(ui.sender).attr('data')][uid] = true;
 	    $(ui.sender).sortable('cancel');
 	}
 	else
