@@ -5,15 +5,17 @@ class GroupController extends Controller{
     $group = new Group($id);
     $group->loadMembers();
     $user = $this->getUser();
+    $group->genWorks();
     $this->render("/Group/show", array(
-					    'user' => $user,
-					    'title' => "小组: ".$group->getName(),
-					    'group' => $group,
-					    'isLeader' => $user->getId() == $group->getLeader(),
-					    'isMember' => $group->isMember($user->getId()),
-					    'members' => $group->genMetaMembers(),
-					    'works' => $group->genWorks()
-					    ));
+				       'leader' => $group->genLeader(),
+				       'user' => $user,
+				       'title' => "小组: ".$group->getName(),
+				       'group' => $group,
+				       'isLeader' => $user->getId() == $group->getLeader(),
+				       'isMember' => $group->isMember($user->getId()),
+				       'members' => $group->genMetaMembers(),
+				       'works' => $group->genWorks()
+				       ));
   }
 
   public function index(){
@@ -75,6 +77,18 @@ class GroupController extends Controller{
   }
   
   public function genSchedule($id){
+  }
+
+  public function retriveMetaInfo($id){
+    $group = new Group($id);
+    $works = $group->genMetaWorks();
+    $members = $group->genMetaMembers();
+    $map = $group->genMap();
+    $this->ajaxReturn(array(
+			    'works' => $works,
+			    'members' => $members,
+			    'map' => $map
+			    ));
   }
 
 }

@@ -2,12 +2,21 @@
 class Work extends fActiveRecord{
   protected function configure(){
   }
+
+  public function userCanDo($uid){
+    try{
+      $worker = new Worker(array('uid' => $uid, 'wid' => $this->getId()));
+      return true;
+    }
+    catch(fNotFoundException $e){
+      return false;
+    }
+  }
+
   public function checkMe($uid){
-    $check = fRecordSet::build('Worker',
-		      array('uid=' => $uid,
-			    'wid=' => $this->getId()));
-    if ($check->count() != 0)
+    if ($this->userCanDo($uid))
       return 'checked';
     else return '';
   }
+
 }

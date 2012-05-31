@@ -74,6 +74,11 @@ $app->post('/group/:id/join/', function($id){
     $controller->join($id);
   });
 
+$app->get('/group/:id/metainfo/', function($id){
+    $controller = new GroupController();
+    $controller->retriveMetaInfo($id);
+  });
+
 $app->get('/group/:id/schedule/', function($id){
     $controller = new GroupController();
     $controller->genSchedule($id);

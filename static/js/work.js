@@ -75,13 +75,4 @@ $(function(){
 	dropOnEmpty: true
     }).disableSelection();
     
-    /**
-     * for save a schedule
-     */
-    $saveScheduleBtn = $("#save-schedule");
-    $saveScheduleBtn.click(function(e){
-	console.log("save schedule");
-	return false;
-    });
-
 });
