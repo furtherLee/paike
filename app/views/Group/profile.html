@@ -21,7 +21,7 @@
 		<div class="group_pl_pos">
 			<ul class="group_list_title">小组成员</ul>
 		</div>
-		<ul>
+		<ul class="span3">
 		  {% for mem in members%}
 		  <div class="group_pl_plane">
 		    <div class="span1 container">
@@ -29,7 +29,11 @@
 		    </div>
 		    <div class="span2 container group_pl_user">
 		      <p class="group_pl_name">姓名: {{mem['name']}}</p>
+		      <p class="group_pl_name">邮箱: {{leader.getEmail()}}</p>
 		    </div>
+		  </div>
+		  <div>
+		  	&nbsp
 		  </div>
 		  {% endfor %}
 		</ul>
