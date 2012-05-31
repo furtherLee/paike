@@ -77,6 +77,22 @@ class GroupController extends Controller{
   }
   
   public function genSchedule($id){
+    fAuthorization::requireLoggedIn();
+    $group = new Group($id);
+    $works = $group->genMetaWorks();
+    $assign = array();
+    foreach($works as $work){
+      $assian[$work['id']] = array();
+      $str = fRequest::get($work['id']+"");
+      $str = trim($str);
+      $members = preg_split("/ /", $str);
+      if(count($members) == 0 || $str=="")
+	$assign[$work['id']] = array();
+      else{
+	$assign[$work['id']] = $members;
+      }
+    }
+    $this->ajaxReturn(array('result' => $assign, 'status' => 'ok'));
   }
 
   public function retriveMetaInfo($id){
