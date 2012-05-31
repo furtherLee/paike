@@ -101,8 +101,7 @@ class GroupController extends Controller{
   private function createSchedule($map, $gid){
     $schedule = new Schedule();
     $schedule->setGid($gid);
-    $schedule->setName(fRequest::get('name'));
-    $schedule->setDesp(fRequest::get('desp'));
+    $schedule->setName(fRequest::get('schedule-name'));
     $schedule->store();
     foreach($map as $key => $value)
       foreach($value as $user){

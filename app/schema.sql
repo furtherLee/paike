@@ -59,7 +59,6 @@ CREATE TABLE IF NOT EXISTS `workers` (
 CREATE TABLE IF NOT EXISTS `schedules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
-  `desp` text NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `gid` int(11) NOT NULL,
   PRIMARY KEY (`id`),

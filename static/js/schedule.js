@@ -65,24 +65,21 @@ $(function(){
     /**
      * Handle Drop Event
      */
-    $('.work-ban').droppable({
-	drop: function(event, ui){
-	    console.log(event);
-	    console.log(ui);
-	    var uid=ui.draggable.attr('data');
-	    var wid=$(this).attr('data');
-	    console.log(wid);
-	    console.log(uid);
-	    if(!map[uid][wid] || getNumOfWork(wid) > $('#work-target-'+wid).attr('num')){
-		console.log("fuck");
-		$(this).sortable('cancel');
-	    }
-	    else
-		result[wid][uid] = true;
-	},
-	out: function(event, ui){
-	    delete result[$(this).attr('data')][ui.draggable.attr('data')];
+    $('.work-ban').bind("sortreceive", function(event, ui){
+	console.log("receive" + $(this).attr('data'));
+	var uid=ui.item.attr('data');
+	var wid=$(this).attr('data');
+
+	if(!map[uid][wid] || getNumOfWork(wid) >= $('#work-target-'+wid).attr('num')){
+	    result[$(ui.sender).attr('data')][uid] = true;
+	    $(ui.sender).sortable('cancel');
 	}
+	else
+	    result[wid][uid] = true;
+    });
+    
+    $('.work-ban').bind("sortremove", function(event, ui){
+	delete result[$(this).attr('data')][ui.item.attr('data')];
     });
 
 
@@ -100,10 +97,12 @@ $(function(){
 	    });
 	    ret += str+"&";
 	});
+	ret += "schedule-name=" + $('schedule-name').val();
 	return ret;
     }
     $saveScheduleBtn = $("#save-schedule");
     $saveScheduleBtn.click(function(e){
+	console.log(result);
 	$.ajax({
             type: 'POST',
             url: config.home+"group/"+$("#now-gid").val()+"/schedule/",
@@ -119,7 +118,6 @@ $(function(){
             },
 	    async:false
         });
-	console.log("save schedule");
 	return false;
     });
 });
