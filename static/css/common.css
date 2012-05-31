@@ -74,18 +74,8 @@
     height: 1.5em;
     line-height:1.2em;
 }
-.group_info_photo{
-	position: relative;
-	left: -20px;
-	top:0px;
-	height: 100px;
-	width: 80px;
-}
-.group_info_bri{
-	position: relative;
-	left: 100px;
-	top: -100px;
-	font-size: 24px;
+.group_info_background{
+	background-image: url('img/zhuanqiangyellow.jpg');
 }
 .group_info_title
 {
@@ -107,4 +97,63 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.little_pic{
+	height: 45px;
+	width:  50px;
+}
+.group_pl_name{
+	color:white;
+	
+}
+.group_list_title{
+	background-color: #81b1f4;	
+	border-bottom: 1px solid #E8E8E8;
+	border-radius: 5px 5px 0 0;
+	min-height: 12px;
+	width: 200px;
+	padding: 12px;
+	color: #faf9f9;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 12px;
+	font-family: "Helvetica Neue",Arial,sans-serif;
+	
+}
+.group_pl_pos{
+	position: relative;
+	left: -23PX;
+	top: -3px;
+	
+}
+.group_pl_user{
+	background-image: url("img/backgroundsnow.jpg"); 
+	width: 160px;
+	height: 45px;
+}
+.gourp_pl_bk{
+	background :white;
+}
+.group_pl_plane{
+	position: relative;
+	left:-23px;
+}
+.paiyiba_gongzuo{
+	height: 30px;
+	position: relative;
+	left: 20px;
+	top:5px;
+}
+.paiyiba_label{
+	text-align: center;
+	color: blue;
+	font-size: 26px;
+    font-weight: bold;
+    line-height: 20px;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+}
+.group_profile_pos{
+	position: relative;
+	left: 30px;
+		
 }
