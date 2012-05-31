@@ -17,7 +17,9 @@
 {% block js %}
    <script type="text/javascript" src="{{JS_HOME}}bootstrap-tab.js"></script>
    <script type="text/javascript" src="{{JS_HOME}}widgets.js"></script>
+   {% if isMember %}
    <script type="text/javascript" src="{{JS_HOME}}work.js"></script>
+   {% endif %}
    {% if isLeader %}
    <script type="text/javascript" src="{{JS_HOME}}schedule.js"></script>
    {% endif %}

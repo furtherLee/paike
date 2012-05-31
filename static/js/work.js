@@ -69,8 +69,27 @@ $(function(){
     /**
      * deal with tab change for schedules
      */
+    var loadTab = function(id){
+	$.ajax({
+            type: 'GET',
+            url: config.home+"schedule/"+id+"/",
+            dataType: 'html',
+            success: function(data, textStatus, jqXHR){
+		$('#schedule-content').html(data);
+		$('#nav-schedules').find('li').removeClass('active');
+		$('#schedule-'+id).parent().addClass('active');
+            },
+            error: function(data, textStatus, jqXHR){
+            },
+            complete: function(data, textStatus, jqXHR){
+            }
+        });	
+    };
+    
     $('.schedule-tab').click(function(e){
 	var id = $(this).attr('data');
+	loadTab(id);
+/*
 	var $that = $(this);
 	$.ajax({
             type: 'GET',
@@ -86,6 +105,13 @@ $(function(){
             complete: function(data, textStatus, jqXHR){
             }
         });
+*/
 	return false;
     });
+
+    /**
+     * Auto the first tab
+     */
+    var $firstTab = $('#nav-schedules .schedule-tab:first');
+    loadTab($firstTab.attr('data'));
 });
