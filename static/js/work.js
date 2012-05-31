@@ -65,8 +65,9 @@ $(function(){
      * for Schedule
      */
     $('.work-ban, .member-ban').sortable({
-	connectWith:".work-ban, .member-ban",
-	placeholder:"label"
+	connectWith: ".work-ban, .member-ban",
+	placeholder: "member-holder",
+	dropOnEmpty: true
     }).disableSelection();
     
     /**
@@ -74,7 +75,7 @@ $(function(){
      */
     $saveScheduleBtn = $("#save-schedule");
     $saveScheduleBtn.click(function(e){
-	
+	console.log("save schedule");
 	return false;
     });
 

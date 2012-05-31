@@ -25,6 +25,7 @@
     font-size: 14px; 
     font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 }
+
 #profile-create-btn{
     width: 150px;
     position: relative;
@@ -36,16 +37,9 @@
     margin-top: 10px;
 }
 
-.work-ban a{
-    margin: 5px;
-    padding: 5px;
-    width: 100px;
-}
+.user-squre-item{
+    width: 45px;
 
-.member-ban a{
-    margin: 5px;
-    padding: 5px;
-    width: 100px;
 }
 
 .work-ban{
@@ -57,4 +51,26 @@
     background: #EEE;
     padding: 5px;
     height: 50px;
+    width:100%;
+}
+
+.member-ban{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin-right: 10px;
+    background: #EEE;
+    padding: 5px;
+    height: auto;
+    min-height:200px;
+    width: 100%;
+}
+
+.member-holder{
+    margin:5px;
+    padding: 5px;
+    width:100px;
+    height: 1.5em;
+    line-height:1.2em;
 }
