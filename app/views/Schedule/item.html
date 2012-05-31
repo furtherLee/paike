@@ -1,0 +1,19 @@
+<table class="table table-bordered">
+  <header>
+    <h4>{{schedule.getName()}}</h4>
+  </header>
+  <thead>
+    <tr>
+      <th>工作名称</th>
+      <th>工作人员</th>
+      <th>工作比例</th>
+    </tr>
+  </thead>
+    {% for work in map %}
+    <tr>
+      <th>{{work['workName']}}</th>
+      <th>{{work['workers']}}</th>
+      <th>{{work['workRatio']}}</th>
+    </tr>
+    {% endfor %}
+</table>

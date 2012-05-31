@@ -1,4 +1,22 @@
 <header>
-<h2>工作安排</h2>
-<hr/>
+  <h2>工作安排</h2>
+  <hr/>
 </header>
+<div class="row">
+  <section id="schedule-content" class="well span5">
+
+  </section>
+
+  <sidebar class="well span2 pull-right">
+    <ul id="nav-schedules" class="nav nav-pills nav-stacked">
+      <li class="nav-header">
+	所有排班表
+      </li>
+      {% for schedule in schedules %}
+      <li>
+	<a href="#" id="schedule-{{schedule.getId()}}" class="schedule-tab" data="{{schedule.getId()}}">{{schedule.getName()}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </sidebar>
+</div>

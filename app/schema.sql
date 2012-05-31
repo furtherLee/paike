@@ -70,6 +70,10 @@ CREATE TABLE IF NOT EXISTS `assigns` (
   `sid` int(11) NOT NULL,
   `wid` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
+  PRIMARY KEY (`sid`, `wid`, `uid`),
+  KEY `uid` (`uid`),
+  KEY `wid` (`wid`),
+  KEY `sid` (`sid`),
   FOREIGN KEY(`uid`) REFERENCES `users` (`id`),
   FOREIGN KEY(`wid`) REFERENCES `works` (`id`),
   FOREIGN KEY(`sid`) REFERENCES `schedules` (`id`)

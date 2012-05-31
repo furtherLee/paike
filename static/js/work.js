@@ -65,5 +65,27 @@ $(function(){
 
 	return false;
     });
-
+    
+    /**
+     * deal with tab change for schedules
+     */
+    $('.schedule-tab').click(function(e){
+	var id = $(this).attr('data');
+	var $that = $(this);
+	$.ajax({
+            type: 'GET',
+            url: config.home+"schedule/"+id+"/",
+            dataType: 'html',
+            success: function(data, textStatus, jqXHR){
+		$('#schedule-content').html(data);
+		$('#nav-schedules').find('li').removeClass('active');
+		$that.parent().addClass('active');
+            },
+            error: function(data, textStatus, jqXHR){
+            },
+            complete: function(data, textStatus, jqXHR){
+            }
+        });
+	return false;
+    });
 });

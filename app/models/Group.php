@@ -84,4 +84,11 @@ class Group extends fActiveRecord{
     }
     return $ret;
   }
+
+  public function genSchedules(){
+    return fRecordSet::build('Schedule',
+			     array('gid=' => $this->getId()),
+			     array('create_time' => 'desc')
+			     );
+  }
 }

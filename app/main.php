@@ -25,7 +25,7 @@ require_once(__DIR__.'/controllers/Controller.php');
 require_once(__DIR__.'/controllers/UserController.php');
 require_once(__DIR__.'/controllers/GroupController.php');
 require_once(__DIR__.'/controllers/WorkController.php');
-
+require_once(__DIR__.'/controllers/ScheduleController.php');
 /**
  * Set Up Routes
  */

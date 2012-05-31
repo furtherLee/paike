@@ -66,7 +66,6 @@ $(function(){
      * Handle Drop Event
      */
     $('.work-ban').bind("sortreceive", function(event, ui){
-	console.log("receive" + $(this).attr('data'));
 	var uid=ui.item.attr('data');
 	var wid=$(this).attr('data');
 
@@ -97,19 +96,19 @@ $(function(){
 	    });
 	    ret += str+"&";
 	});
-	ret += "schedule-name=" + $('schedule-name').val();
+	ret += "schedule-name=" + $('#schedule-name').val();
 	return ret;
     }
     $saveScheduleBtn = $("#save-schedule");
     $saveScheduleBtn.click(function(e){
-	console.log(result);
+	console.log(prepare(result));
 	$.ajax({
             type: 'POST',
             url: config.home+"group/"+$("#now-gid").val()+"/schedule/",
 	    data: prepare(result),
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
-		console.log(data);
+		// TODO
             },
             error: function(data, textStatus, jqXHR){
 		//TODO

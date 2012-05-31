@@ -14,7 +14,8 @@ class GroupController extends Controller{
 				       'isLeader' => $user->getId() == $group->getLeader(),
 				       'isMember' => $group->isMember($user->getId()),
 				       'members' => $group->genMembers(),
-				       'works' => $group->genWorks()
+				       'works' => $group->genWorks(),
+				       'schedules' => $group->genSchedules()
 				       ));
   }
 
