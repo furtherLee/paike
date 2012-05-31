@@ -14,4 +14,6 @@ define("SESSION_PATH", "/tmp/sessions/");
 define("JS_HOME", "http://localhost/paike/static/js/");
 define("CSS_HOME", "http://localhost/paike/static/css/");
 define("IMG_HOME", "http://localhost/paike/static/img/");
+define("USER_IMG_PATH", "image/");
+define("USER_IMG_HOME", "http://localhost/paike/image/");
 
