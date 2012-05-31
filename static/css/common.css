@@ -54,6 +54,10 @@
     width:100%;
 }
 
+.work-ban-highlight{
+    background-color: #9ACD32;
+}
+
 .member-ban{
     list-style-type:none;
     margin: 0;

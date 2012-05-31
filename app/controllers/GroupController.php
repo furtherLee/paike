@@ -13,7 +13,7 @@ class GroupController extends Controller{
 				       'group' => $group,
 				       'isLeader' => $user->getId() == $group->getLeader(),
 				       'isMember' => $group->isMember($user->getId()),
-				       'members' => $group->genMetaMembers(),
+				       'members' => $group->genMembers(),
 				       'works' => $group->genWorks()
 				       ));
   }
@@ -92,7 +92,27 @@ class GroupController extends Controller{
 	$assign[$work['id']] = $members;
       }
     }
-    $this->ajaxReturn(array('result' => $assign, 'status' => 'ok'));
+    
+    $schedule = $this->createSchedule($assign, $id);
+    
+    $this->ajaxReturn(array('result' => $assign, 'scheduleID' => $schedule->getId(), 'status' => 'ok'));
+  }
+
+  private function createSchedule($map, $gid){
+    $schedule = new Schedule();
+    $schedule->setGid($gid);
+    $schedule->setName(fRequest::get('name'));
+    $schedule->setDesp(fRequest::get('desp'));
+    $schedule->store();
+    foreach($map as $key => $value)
+      foreach($value as $user){
+	$assign = new Assign();
+	$assign->setSid($schedule->getId());
+	$assign->setWid($key);
+	$assign->setUid($user);
+	$assign->store();
+      }
+    return $schedule;
   }
 
   public function retriveMetaInfo($id){

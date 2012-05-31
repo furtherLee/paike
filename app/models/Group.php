@@ -46,6 +46,13 @@ class Group extends fActiveRecord{
 					);
   }
 
+  public function genMembers(){
+    if(!isset($this->members))
+      $this->loadMembers();
+    return $this->members;
+    
+  }
+
   public function genMetaMembers(){
     $ret = array();
     if(!isset($this->members))

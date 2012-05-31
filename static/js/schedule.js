@@ -29,13 +29,56 @@ $(function(){
 	result[value['id']] = {};
     });
  
+    var getNumOfWork = function(wid){
+	var ret = 0;
+	$.each(result[wid], function(key, value){ret++});
+	return ret;
+    }
 
+    var checkCan = function(uid, wid){
+	var requireNum = $('#work-target-'+wid).attr('num');
+	return map[uid][wid] && requireNum > getNumOfWork(wid);
+    }
+
+    /**
+     * for Schedule
+     */
+    $('.work-ban, .member-ban').sortable({
+	connectWith: ".work-ban, .member-ban",
+	dropOnEmpty: true,
+	start: function(event, ui){
+	    var uid = $(ui.item).attr('data');
+	    $.each(works, function(key, value){
+		if (checkCan(uid, value['id'])){
+		    $('#work-target-'+value['id']).addClass("work-ban-highlight");
+		}
+	    });
+	},
+	stop: function(event, ui){
+	    $.each(works, function(key, value){
+		$('#work-target-'+value['id']).removeClass("work-ban-highlight");
+	    });
+	}
+    }).disableSelection();
+    
+    
     /**
      * Handle Drop Event
      */
     $('.work-ban').droppable({
 	drop: function(event, ui){
-	    result[$(this).attr('data')][ui.draggable.attr('data')] = true;
+	    console.log(event);
+	    console.log(ui);
+	    var uid=ui.draggable.attr('data');
+	    var wid=$(this).attr('data');
+	    console.log(wid);
+	    console.log(uid);
+	    if(!map[uid][wid] || getNumOfWork(wid) > $('#work-target-'+wid).attr('num')){
+		console.log("fuck");
+		$(this).sortable('cancel');
+	    }
+	    else
+		result[wid][uid] = true;
 	},
 	out: function(event, ui){
 	    delete result[$(this).attr('data')][ui.draggable.attr('data')];

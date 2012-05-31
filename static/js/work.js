@@ -66,13 +66,4 @@ $(function(){
 	return false;
     });
 
-    /**
-     * for Schedule
-     */
-    $('.work-ban, .member-ban').sortable({
-	connectWith: ".work-ban, .member-ban",
-	placeholder: "member-holder",
-	dropOnEmpty: true
-    }).disableSelection();
-    
 });

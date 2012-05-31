@@ -1,7 +1,5 @@
-<div class="row">
-  <div class="paiyiba_gongzuo">
-  	<a class="label label-warning">{{work.getName()}}</a>
-  </div>
+<div style="margin-bottom:60px;">
+  <a class="label label-warning">{{work.getName()}}({{work.getNum()}}人)</a>
+  <section id="work-target-{{work.getId()}}" data="{{work.getId()}}" num="{{work.getNum()}}" class="span5 work-ban">
+  </section>
 </div>
-<section id="work-target-{{work.getId()}}" data="{{work.getId()}}" class="span5 work-ban">
-</section>

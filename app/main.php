@@ -16,6 +16,7 @@ require_once(__DIR__.'/models/Group.php');
 require_once(__DIR__.'/models/Member.php');
 require_once(__DIR__.'/models/Work.php');
 require_once(__DIR__.'/models/Worker.php');
+require_once(__DIR__.'/models/Assign.php');
 /**
  * Load Controllers
  */

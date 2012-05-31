@@ -17,7 +17,9 @@
     <div id="works" class="tab-pane">
       {% include "/Work/index.html" %}
       <hr/>
+      {% if isLeader %}
       <button id="add-work" class="btn btn-primary pull-right">添加一个工作</button>
+      {% endif %}
       <button id="save-time" class="btn btn-success pull-right">保存我的时间安排</button>
     </div>
     {% endif %}
