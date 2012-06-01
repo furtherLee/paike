@@ -53,7 +53,7 @@ $(function(){
 	var d = $("#work-list-form").serialize();
 	$.ajax({
             type: 'POST',
-            url: config.home+"workers_assign/"+$("#now-gid").val(),
+            url: config.home+"workers_assign/"+$("#now-gid").val() + "/",
             data: d,
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
@@ -99,5 +99,28 @@ $(function(){
      * Auto the first tab
      */
     var $firstTab = $('#nav-schedules .schedule-tab:first');
-    loadTab($firstTab.attr('data'));
+    if ($firstTab.size() > 0)
+	loadTab($firstTab.attr('data'));
+
+    /**
+     * Deal with delete
+     */
+    $('#work-list-form').on('click', '.mng-delete', function(e){
+	var id = $(this).attr('data');
+	var $that = $(this);
+	$.ajax({
+            type: 'POST',
+            url: config.home+"work/" + id + "/delete/",
+            dataType: 'json',
+            success: function(data, textStatus, jqXHR){
+		$that.parent().parent().remove();
+		$.jGrowl("删除成功",{header: "成功"});
+            },
+            error: function(data, textStatus, jqXHR){
+		$.jGrowl("删除失败",{header: "失败"});		
+            },
+            complete: function(data, textStatus, jqXHR){
+            }	    
+	});
+    });
 });

@@ -99,6 +99,11 @@ $app->post('/group/:id/schedule/', function($id){
     $controller->genSchedule($id);
   }); 
 
+$app->post('/work/:id/delete/', function($id){
+    $controller = new WorkController();
+    $controller->delete($id);
+  });
+
 $app->get('/search/', function(){
     $controller = new GroupController();
     $controller->search();

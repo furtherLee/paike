@@ -7,7 +7,12 @@ $(function(){
     $sex = $form.find('[name="sex"]');
     $birthday = $form.find('[name="birthday"]');
     $submit = $('#submit');
-    $birthday.datepicker();
+    $birthday.datepicker({
+	minDate: "-30Y",
+	maxDate: "+0D",
+	changeMonth: true,
+	changeYear: true
+    });
     
     var checkOK = function(){
 	var pattern = /^([a-zA-Z0-9._-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;

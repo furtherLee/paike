@@ -14,7 +14,7 @@ class WorkController extends Controller{
 			    '<th>'.$work->getNum().'</th>'.
 			    '<th><input type="hidden" value="0" name="work'.$work->getId().'"/>'.
 			    '<input type="checkbox" value="1" name="work'.$work->getId().'"/>'.
-			    '<th><a href="'.HOST_URL."/work/".$work->getId()."/delete/".'">删除</a></th'."</tr>"
+			    '<th><a href="#" data="'.$work->getId().'" class="mng-delete">'.'删除</a></th>'."</tr>"
 			    ));
   }
   public function assignMyself($gid){
@@ -42,4 +42,19 @@ class WorkController extends Controller{
     }
     $this->ajaxReturn(array('status'=>'ok'));
   }
+
+  public function delete($id){
+    $work = new Work($id);
+    $workers = fRecordSet::build('Worker',
+				 array('wid=' => $id));
+
+    foreach($workers as $worker){
+      $worker->delete();
+    }
+
+    $work->delete();
+
+    $this->ajaxReturn(array('status' => 'ok'));
+  }
+
 }
