@@ -23,4 +23,10 @@
    {% if isLeader %}
    <script type="text/javascript" src="{{JS_HOME}}schedule.js"></script>
    {% endif %}
+   <script type="text/javascript">
+     /**
+     * show first tab
+     */
+     $("#operate-tabs a:first").tab("show");
+   </script>
 {% endblock %}

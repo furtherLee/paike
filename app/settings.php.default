@@ -7,13 +7,13 @@ define("DB_USER", "paike_dev");
 define("DB_PASS", "paike_dev");
 define("DB_HOST", "localhost");
 
-define("HOST_URL", "http://localhost");
+define("HOST_URL", "http://localhost/paike");
 define("SITE_TITLE", "排客");
 
 define("SESSION_PATH", "/tmp/sessions/");
 define("JS_HOME", "http://localhost/paike/static/js/");
 define("CSS_HOME", "http://localhost/paike/static/css/");
 define("IMG_HOME", "http://localhost/paike/static/img/");
-define("USER_IMG_PATH", "image/");
-define("USER_IMG_HOME", "http://localhost/paike/image/");
+define("IMAGE_PATH", "image/");
+define("IMAGE_HOME", "http://localhost/paike/image/");
 
