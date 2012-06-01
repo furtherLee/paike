@@ -14,7 +14,8 @@ $(function(){
         });
 	$box.find('#cancel').click(function(e) {
             $box.modal('hide');
-        });
+            return false;
+	});
 	$box.find("#submit").click(function(e) {
 	    var d = $box.find("#add-work-form").serialize();
             d = d+"&gid="+$("#now-gid").val();
@@ -89,23 +90,6 @@ $(function(){
     $('.schedule-tab').click(function(e){
 	var id = $(this).attr('data');
 	loadTab(id);
-/*
-	var $that = $(this);
-	$.ajax({
-            type: 'GET',
-            url: config.home+"schedule/"+id+"/",
-            dataType: 'html',
-            success: function(data, textStatus, jqXHR){
-		$('#schedule-content').html(data);
-		$('#nav-schedules').find('li').removeClass('active');
-		$that.parent().addClass('active');
-            },
-            error: function(data, textStatus, jqXHR){
-            },
-            complete: function(data, textStatus, jqXHR){
-            }
-        });
-*/
 	return false;
     });
 

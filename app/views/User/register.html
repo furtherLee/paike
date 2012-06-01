@@ -17,55 +17,62 @@
 	</a>
       </div>
       <div class="span6">
-    <div class="table">
-	<form id="register-form" class="form-horizontal">
-	  <fieldset>
-            <div class="control-group">
-              <label for="name" class="control-label">昵称</label>
-              <div class="controls">
-		<input type="text" placeholder="新建哥" name="name" class="input-xlarge focused"/>
+	<div class="table">
+	  <form id="register-form" class="form-horizontal">
+	    <fieldset>
+              <div class="control-group">
+		<label for="name" class="control-label">昵称</label>
+		<div class="controls">
+		  <input type="text" placeholder="新建哥" name="name" class="input-xlarge focused"/>
+		</div>
               </div>
-            </div>
-            <div class="control-group">
-              <label for="email" class="control-label">邮箱地址</label>
-              <div class="controls">
-		<input type="text" placeholder="Example@example.com" name="email" class="input-xlarge focused"/>
+              <div class="control-group">
+		<label for="email" class="control-label">邮箱地址</label>
+		<div class="controls">
+		  <input type="text" placeholder="Example@example.com" name="email" class="input-xlarge focused"/>
+		</div>
               </div>
-            </div>
-            <div class="control-group">
-              <label for="password" class="control-label">密码</label>
-              <div class="controls">
-		<input type="password" placeholder="*****" name="password"  class="input-xlarge focused"/>
+              <div class="control-group">
+		<label for="password" class="control-label">密码</label>
+		<div class="controls">
+		  <input type="password" placeholder="*****" name="password"  class="input-xlarge focused"/>
+		</div>
               </div>
-            </div>
-            <div class="control-group">
-              <label for="passwordagain" class="control-label">密码重复</label>
-              <div class="controls">
-		<input type="password" placeholder="*****" name="passwordagain" class="input-xlarge focused"/>
+              <div class="control-group">
+		<label for="passwordagain" class="control-label">密码重复</label>
+		<div class="controls">
+		  <input type="password" placeholder="*****" name="passwordagain" class="input-xlarge focused"/>
+		</div>
               </div>
-            </div>
-            <div class="control-group">
-              <label for="sex" class="control-label">性别</label>
-              <div class="controls">
-		<select name="sex" class="input-xlarge">
-                  <option>男</option>
-                  <option>女</option>
-		</select>
+              <div class="control-group">
+		<label for="sex" class="control-label">性别</label>
+		<div class="controls">
+		  <select name="sex" class="input-xlarge">
+                    <option>男</option>
+                    <option>女</option>
+		  </select>
+		</div>
               </div>
-            </div>
-            <div class="control-group">
-              <label for="birthday" class="control-label">出生年月</label>
-              <div class="controls">
-	        <input type="date" name="birthday" class="input-xlarge"/>
+              <div class="control-group">
+		<label for="birthday" class="control-label">出生年月</label>
+		<div class="controls">
+		  <input type="date" name="birthday" class="input-xlarge"/>
+		</div>
               </div>
-            </div>
-            <div id="registbtnpos">
-              <button class="btn btn-primary pull-left input-middle" id="submit" type="submit">注册</button>
-              <a class="btn pull-left input-middle" href="{{HOST_URL}}">取消</a>
-            </div>
-          </fieldset>
-	</form>
-    </div>
+	      <div class="control-group">
+		<label for="photo" class="control-label">头像</label>
+		<div class="controls">
+		  <input type="hidden" id="input-photo" name="photo" value="defaultUser.jpg"/>
+		  <button class="btn btn-info input-xlarge" id="upload-img">上传头像</button>
+		</div>
+	      </div>
+              <div id="registbtnpos">
+		<button class="btn btn-primary pull-left input-middle" id="submit" type="submit">注册</button>
+		<a class="btn pull-left input-middle" href="{{HOST_URL}}">取消</a>
+              </div>
+            </fieldset>
+	  </form>
+	</div>
       </div>
     </div>
   </div>
@@ -73,5 +80,9 @@
 {% endblock %}
 
 {% block js %}
+<script type="text/javascript" src="{{JS_HOME}}jquery.ui.widget.js"></script>
+<script type="text/javascript" src="{{JS_HOME}}jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="{{JS_HOME}}jquery.fileupload.js"></script>
+<script type="text/javascript" src="{{JS_HOME}}widgets.js"></script>
 <script type="text/javascript" src="{{JS_HOME}}register.js"></script>
 {% endblock %}

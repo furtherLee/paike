@@ -90,6 +90,8 @@ class UserController extends Controller{
 
     $user->setBirthday(fRequest::get('birthday'));
 
+    $user->setPhoto(fRequest::get('photo'));
+
     $user->store();
     
     $this->ajaxReturn(array(

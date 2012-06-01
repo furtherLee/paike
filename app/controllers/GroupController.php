@@ -42,6 +42,7 @@ class GroupController extends Controller{
     $group->setName(fRequest::get("name"));
     $group->setLeader(fRequest::get("leader-id"));
     $group->setDesp(fRequest::get("desp"));
+    $group->setPhoto(fRequest::get("photo"));
     $group->store();
     $member = new Member();
     $member->setUid($this->getUser()->getId());

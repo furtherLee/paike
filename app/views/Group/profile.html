@@ -7,7 +7,7 @@
 		<ul >
 		<div class="group_pl_plane">
 			<div class="span1 container">
-				<img  src="{{IMG_HOME}}photo.png" class="little_pic"/>
+				<img  src="{{IMAGE_HOME}}{{leader.getPhoto()}}" class="little_pic"/>
 			</div>
 			<div class="span2 container group_pl_user">
 				<p class="group_pl_name">姓名: {{leader.getName()}}</p>
@@ -25,7 +25,7 @@
 		  {% for mem in members%}
 		  <div class="group_pl_plane">
 		    <div class="span1 container">
-		      <img  src="{{IMG_HOME}}photo.png" class="little_pic"/>
+		      <img  src="{{IMAGE_HOME}}{{mem.getPhoto()}}" class="little_pic"/>
 		    </div>
 		    <div class="span2 container group_pl_user">
 		      <p class="group_pl_name">姓名: {{mem.getName()}}</p>

@@ -5,7 +5,8 @@ class Controller{
 					 "HOST_URL" => HOST_URL,
 					 "JS_HOME" => JS_HOME,
 					 "CSS_HOME" => CSS_HOME,
-					 "IMG_HOME" => IMG_HOME
+					 "IMG_HOME" => IMG_HOME,
+					 "IMAGE_HOME" => IMAGE_HOME
 				    );
   
   protected function render($name, $context){

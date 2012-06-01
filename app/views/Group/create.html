@@ -12,5 +12,9 @@
 
 {% block js %}
 {{ parent() }}
+<script type="text/javascript" src="{{JS_HOME}}jquery.ui.widget.js"></script>
+<script type="text/javascript" src="{{JS_HOME}}jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="{{JS_HOME}}jquery.fileupload.js"></script>
+<script type="text/javascript" src="{{JS_HOME}}widgets.js"></script>
 <script type="text/javascript" src="{{JS_HOME}}group_create.js"></script>
 {% endblock %}

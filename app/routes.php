@@ -104,4 +104,9 @@ $app->get('/search/', function(){
     $controller->search();
   });
 
+$app->post('/upload/', function(){
+    $controller = new ImageController();
+    $controller->uploadAvatar();
+  });
+
 $app->run();
