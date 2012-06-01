@@ -14,8 +14,8 @@ $(function(){
 		map = data.map;
             },
             error: function(data, textStatus, jqXHR){
-		//TODO
-            },
+		$.jGrowl("无法取得服务器数据，请检查网络情况",{header: "错误"});
+	    },
             complete: function(data, textStatus, jqXHR){
             },
 	    async:false
@@ -109,10 +109,10 @@ $(function(){
 	    data: prepare(result),
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
-		// TODO
+		$.jGrowl("工作安排保存成功",{header: "成功"});
             },
             error: function(data, textStatus, jqXHR){
-		//TODO
+		$.jGrowl("工作安排保存失败",{header: "失败"});
             },
             complete: function(data, textStatus, jqXHR){
             },

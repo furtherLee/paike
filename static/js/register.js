@@ -10,6 +10,19 @@ $(function(){
     $birthday.datepicker();
     
     var checkOK = function(){
+	var pattern = /^([a-zA-Z0-9._-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+	if ($pass.val() != $passAgain.val()){
+	    $.jGrowl("两次密码输入不一致", {header: "注册失败"});
+	    return false;
+	}
+	else if(!pattern.test($email.val())){
+	    $.jGrowl("邮箱地址不正确", {header: "注册失败"});	
+	    return false;
+	}
+	else if($pass == ""){
+	    $.jGrowl("不能使用空密码", {header: "注册失败"});	
+	    return false;
+	}	     
 	return true;
     }
     
@@ -20,10 +33,11 @@ $(function(){
 		data: $form.serialize(),
 		dateType: "json",
 		success: function(data, textStatus, jqXHR){
+		    $.jGrowl("注册成功", {header: "成功"});
 		    window.location.href = config.home;
 		},
 		error: function(textStatus, jqXHR, errorThrown){
-   
+		    $.jGrowl("注册失败", {header: "失败"});
 		}		
 	    });
 	}

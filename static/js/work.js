@@ -25,10 +25,11 @@ $(function(){
                 data: d,
                 dataType: 'json',
                 success: function(data, textStatus, jqXHR){
-		    console.log($("#works .work-list table"));
 		    $("#works .work-list table").append(data['html-code']);
+		    $.jGrowl("工作添加成功", {header: "成功"});      
                 },
                 error: function(data, textStatus, jqXHR){
+		    $.jGrowl("工作添加失败", {header: "失败"});      
                 },
                 complete: function(data, textStatus, jqXHR){
                 }
@@ -56,9 +57,10 @@ $(function(){
             data: d,
             dataType: 'json',
             success: function(data, textStatus, jqXHR){
-		console.log(data);
-            },
+		$.jGrowl("时间更改成功", {header: "成功"});      
+	    },
             error: function(data, textStatus, jqXHR){
+		$.jGrowl("时间更改失败", {header: "失败"});      
             },
             complete: function(data, textStatus, jqXHR){
             }

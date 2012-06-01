@@ -10,7 +10,12 @@ $(function(){
 		window.location.href = config.home;
 	    },
 	    error: function(textStatus, jqXHR, errorThrown){
-       
+		var error = eval("("+textStatus['responseText']+")")['error'];
+		if (error['email'] !== undefined)
+		    $.jGrowl(error['email'], {header: "登录失败"});
+		else
+		    $.jGrowl(error['pass'], {header: "登录失败"});
+
 	    }
 	});
 	return false;

@@ -14,10 +14,11 @@ $(function(){
 		data: $form.serialize(),
 		dateType: "json",
 		success: function(data, textStatus, jqXHR){
+		    $.jGrowl("创建成功" , {header: "成功"});  
 		    window.location.href = config.home;
 		},
 		error: function(textStatus, jqXHR, errorThrown){
-   
+		    $.jGrowl("创建失败" , {header: "失败"});  
 		}		
 	    });
 	}

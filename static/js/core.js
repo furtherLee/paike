@@ -16,13 +16,15 @@ $(function(){
             type: 'POST',
             url: config.home+"group/"+id+"/join/",
             success: function(data, textStatus, jqXHR){
-		// TODO inform user
+		$.jGrowl("小组加入成功" ,{header: "成功"});
             },
             error: function(data, textStatus, jqXHR){
+		$.jGrowl("小组加入失败" ,{header: "失败"});
             },
             complete: function(data, textStatus, jqXHR){
             }
         });
+	return false;
     });
 
 });
