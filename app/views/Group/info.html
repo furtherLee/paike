@@ -1,18 +1,14 @@
 <div class="well span7 container group_info_background">
-	<div class="container span2">
+	<div class="span2">
 		<img  src="{{IMAGE_HOME}}{{group.getPhoto()}}"/>
 	</div>
-	<div class="span5">
-		<p class="group_info_title">
-			{{group.getName()}}			
-		</p>
-		<br/>
-		<p class="group_info_cont">
-			小组组长: {{leader.getName()}}
-		</p>
-		<br/>
-		<p class="group_info_cont"> 
-			小组描述：{{group.getDesp()}}
-		</p>
+	<div class="span4">
+	  <header>
+	    <h4>{{group.getName()}}(组长:{{leader.getName()}})</h4>
+	    <hr/>
+	  </header>
+	  <section>
+	    {{group.getDesp() | e}}
+	  </section>
 	</div>
 </div>
